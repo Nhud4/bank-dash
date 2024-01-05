@@ -1,0 +1,27 @@
+.wrapper{
+    @apply bg-white min-h-screen
+}
+.wrapperLogo {
+    @apply flex justify-center items-center space-x-2 py-3
+}
+.wrapperLogo h1 {
+    @apply text-[25px] text-[#343C6A] font-black
+}
+.wrapperMenu {
+    @apply grid grid-cols-9 gap-2 h-14 my-2
+}
+.borderActive {
+    @apply w-[6px] h-full bg-[#2D60FF] rounded-r-full
+}
+.borderInactive {
+    @apply w-[6px] h-full rounded-r-full
+}
+.menu {
+    @apply flex justify-start items-center space-x-4 col-span-8
+}
+.activeMenu {
+    @apply text-[18px] font-medium text-[#2D60FF]
+}
+.inactiveMenu {
+    @apply text-[18px] font-medium text-[#B1B1B1]
+}

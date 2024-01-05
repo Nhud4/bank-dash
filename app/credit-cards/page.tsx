@@ -1,9 +1,11 @@
+'use client'
+
 import React from 'react'
 
 export default function Page() {
   return (
     <div>
-      <h1>Privileges</h1>
+      <h1>Credit Card</h1>
     </div>
   )
 }
