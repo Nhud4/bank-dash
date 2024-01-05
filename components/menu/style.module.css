@@ -1,8 +1,8 @@
 .wrapper{
-    @apply bg-white min-h-screen
+    @apply bg-white min-h-screen border-r border-[#E6EFF5]
 }
 .wrapperLogo {
-    @apply flex justify-center items-center space-x-2 py-3
+    @apply flex justify-center items-center space-x-2 py-4
 }
 .wrapperLogo h1 {
     @apply text-[25px] text-[#343C6A] font-black

@@ -19,3 +19,15 @@
 body {
   background: rgba(245, 247, 250, 1)
 }
+input {
+  font-size: 15px;
+  color: #8BA3CB;
+  border-radius: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+input::placeholder {
+  font-size: 15px;
+  color: #8BA3CB;
+}
