@@ -1,0 +1,32 @@
+.wrapperBlue {
+    @apply rounded-2xl text-white w-full;
+    background: linear-gradient(107deg, #4C49ED 2.61%, #0A06F4 101.2%);
+}
+.wrapperWhite {
+    @apply rounded-2xl w-full bg-white;
+}
+.topContent {
+    @apply grid grid-cols-3 gap-4 p-4
+}
+.topContent p {
+    @apply text-xs font-normal opacity-70
+}
+.topContent h1 {
+    @apply text-xl font-semibold
+}
+.topContent h2 {
+    @apply text-[15px] font-semibold
+}
+.wrapperBottomBlue {
+    @apply flex justify-between items-center p-4;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+.wrapperBottomBlue h1 {
+    @apply text-[22px] font-semibold
+}
+.wrapperBottomWhite {
+    @apply flex justify-between items-center p-4 border-t border-[#DFEAF2];
+}
+.wrapperBottomWhite h1 {
+    @apply text-[22px] font-semibold
+}

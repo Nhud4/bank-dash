@@ -8,7 +8,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       <NavigationMenu />
       <div className='col-span-4 w-full'>
         <Header />
-        <div className='pl-5 pt-5'>{children}</div>
+        <div className='px-5 py-4'>{children}</div>
       </div>
     </div>
   )

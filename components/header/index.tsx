@@ -6,22 +6,22 @@ import Search from '../input/search'
 import SettingIcon from '@/public/assets/icons/settings.svg'
 import NotificationIcon from '@/public/assets/icons/notification.svg'
 import Profile from '@/public/assets/images/udin.png'
+// import Profile2 from '@/public/assets/images/profile.jpg'
 import Image from 'next/image'
+import styles from './style.module.css'
 
 export default function Header() {
   const pathname = usePathname()
   const pageTitle = pathname.split('/')[1]
   return (
-    <div className='flex justify-between items-center w-full bg-white p-3'>
-      <h1 className='text-[28px] font-semibold text-[#343C6A] capitalize'>
-        {pageTitle ? pageTitle : 'Dashboard'}
-      </h1>
-      <div className='flex items-center space-x-4'>
+    <div className={styles.wrapper}>
+      <h1>{pageTitle ? pageTitle : 'Dashboard'}</h1>
+      <div className={styles.wrapperRight}>
         <Search />
-        <div className='w-[50px] h-[50px] bg-[#F5F7FA] rounded-full flex justify-center items-center'>
+        <div className={styles.icon}>
           <Image src={SettingIcon} alt='setting' />
         </div>
-        <div className='w-[50px] h-[50px] bg-[#F5F7FA] rounded-full flex justify-center items-center'>
+        <div className={styles.icon}>
           <Image src={NotificationIcon} alt='notification' />
         </div>
         <div>

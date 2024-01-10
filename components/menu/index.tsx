@@ -91,9 +91,9 @@ export default function NavigationMenu() {
               onMouseLeave={onMouseLeave}
             >
               {pathname === item.url || hover ? (
-                <Image src={item.activeIcon} alt='icon' />
+                <Image src={item.activeIcon} alt='icon' priority={true} />
               ) : (
-                <Image src={item.inactiveIcon} alt='icon' />
+                <Image src={item.inactiveIcon} alt='icon' priority={true} />
               )}
               <Link
                 href={item.url}

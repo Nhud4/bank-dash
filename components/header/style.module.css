@@ -1,0 +1,12 @@
+.wrapper {
+    @apply flex justify-between items-center w-full bg-white p-3
+}
+.wrapper h1 {
+    @apply text-2xl font-semibold text-[#343C6A] capitalize
+}
+.wrapperRight {
+    @apply flex items-center space-x-4
+}
+.icon {
+    @apply w-[50px] h-[50px] bg-[#F5F7FA] rounded-full flex justify-center items-center
+}
