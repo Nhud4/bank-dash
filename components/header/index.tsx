@@ -5,8 +5,7 @@ import { usePathname } from 'next/navigation'
 import Search from '../input/search'
 import SettingIcon from '@/public/assets/icons/settings.svg'
 import NotificationIcon from '@/public/assets/icons/notification.svg'
-import Profile from '@/public/assets/images/udin.png'
-// import Profile2 from '@/public/assets/images/profile.jpg'
+import Profile2 from '@/public/assets/images/image01.jpg'
 import Image from 'next/image'
 import styles from './style.module.css'
 
@@ -25,7 +24,7 @@ export default function Header() {
           <Image src={NotificationIcon} alt='notification' />
         </div>
         <div>
-          <Image src={Profile} alt='profile' width={50} height={50} />
+          <Image src={Profile2} alt='profile' width={50} height={50} className='rounded-full' />
         </div>
       </div>
     </div>

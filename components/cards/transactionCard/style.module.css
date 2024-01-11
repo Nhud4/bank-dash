@@ -1,0 +1,18 @@
+.wrapper {
+    @apply rounded-2xl w-full bg-white p-4 space-y-2
+}
+.wrapperContent {
+    @apply flex items-center space-x-2
+}
+.content {
+    @apply flex justify-between items-center w-full
+}
+.content h1 {
+    @apply text-base font-medium text-[#232323]
+}
+.content h2 {
+    @apply text-base font-medium
+}
+.content p {
+    @apply text-[15px] font-normal text-[#718EBF]
+}

@@ -4,9 +4,9 @@ import Header from '@/components/header'
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <div className='grid grid-cols-5'>
+    <div className='grid grid-cols-6'>
       <NavigationMenu />
-      <div className='col-span-4 w-full'>
+      <div className='col-span-5 w-full'>
         <Header />
         <div className='px-5 py-4'>{children}</div>
       </div>
