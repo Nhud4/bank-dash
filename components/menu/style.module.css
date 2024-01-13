@@ -20,8 +20,8 @@
     @apply flex justify-start items-center space-x-4 col-span-8
 }
 .activeMenu {
-    @apply text-[18px] font-medium text-[#2D60FF]
+    @apply text-base font-medium text-[#2D60FF]
 }
 .inactiveMenu {
-    @apply text-[18px] font-medium text-[#B1B1B1]
+    @apply text-base font-medium text-[#B1B1B1]
 }
