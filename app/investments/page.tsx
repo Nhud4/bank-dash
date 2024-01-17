@@ -15,14 +15,22 @@ export default function Page() {
           title='Total Invested Amount'
           value='$150,000'
           color='#DCFAF8'
+          type='normal'
         />
         <GeneralCard
           src={InvestmentIcon}
           title='Number of Investments'
           value='1,250'
           color='#FFE0EB'
+          type='normal'
         />
-        <GeneralCard src={ReturnIcon} title='Rate of Return' value='+5.80%' color='#E7EDFF' />
+        <GeneralCard
+          src={ReturnIcon}
+          title='Rate of Return'
+          value='+5.80%'
+          color='#E7EDFF'
+          type='normal'
+        />
       </div>
     </div>
   )
