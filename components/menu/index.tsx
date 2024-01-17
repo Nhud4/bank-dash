@@ -81,27 +81,31 @@ export default function NavigationMenu() {
         return (
           <div key={index} className={styles.wrapperMenu}>
             <div
-              className={
-                pathname === item.url || hover ? styles.borderActive : styles.borderInactive
-              }
+              className={[
+                styles.border,
+                pathname === item.url || hover ? 'bg-[#2D60FF]' : 'bg-white'
+              ].join(' ')}
             />
-            <div
-              className={styles.menu}
+            <Link
+              href={item.url}
               onMouseEnter={() => onMouseEnter(item.url)}
               onMouseLeave={onMouseLeave}
             >
-              {pathname === item.url || hover ? (
-                <Image src={item.activeIcon} alt='icon' priority={true} />
-              ) : (
-                <Image src={item.inactiveIcon} alt='icon' priority={true} />
-              )}
-              <Link
-                href={item.url}
-                className={pathname === item.url || hover ? styles.activeMenu : styles.inactiveMenu}
-              >
-                {item.label}
-              </Link>
-            </div>
+              <div className={styles.menu}>
+                {pathname === item.url || hover ? (
+                  <Image src={item.activeIcon} alt='icon' priority={true} />
+                ) : (
+                  <Image src={item.inactiveIcon} alt='icon' priority={true} />
+                )}
+                <p
+                  className={
+                    pathname === item.url || hover ? styles.activeMenu : styles.inactiveMenu
+                  }
+                >
+                  {item.label}
+                </p>
+              </div>
+            </Link>
           </div>
         )
       })}

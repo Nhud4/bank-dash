@@ -4,11 +4,11 @@ import Header from '@/components/header'
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <div className='grid grid-cols-6'>
+    <div>
       <NavigationMenu />
-      <div className='col-span-5 w-full'>
+      <div className='ml-[17rem] flex-1 px-0'>
         <Header />
-        <div className='px-5 py-4'>{children}</div>
+        <div className='px-5 pb-4 pt-24'>{children}</div>
       </div>
     </div>
   )
