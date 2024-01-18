@@ -17,11 +17,11 @@
 } */
 
 body {
-  background: rgba(245, 247, 250, 1)
+  background: rgba(245, 247, 250, 1);
 }
 input {
   font-size: 15px;
-  color: #8BA3CB;
+  color: #8ba3cb;
   border-radius: none;
   border: none;
   outline: none;
@@ -29,5 +29,5 @@ input {
 }
 input::placeholder {
   font-size: 15px;
-  color: #8BA3CB;
+  color: #8ba3cb;
 }

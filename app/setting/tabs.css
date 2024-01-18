@@ -1,9 +1,9 @@
 .react-tabs__tab-list {
-    @apply flex justify-start items-center mb-4 border-b border-[#F4F5F7]
+  @apply flex justify-start items-center mb-4 border-b border-[#F4F5F7];
 }
 .react-tabs__tab {
-    @apply pb-2 px-4 border-b-2 border-white text-sm text-[#718EBF] cursor-pointer
+  @apply pb-2 px-4 border-b-2 border-white text-sm text-[#718EBF] cursor-pointer;
 }
 .react-tabs__tab--selected {
-    @apply border-b-2 border-[#1814F3] text-sm text-[#1814F3] cursor-pointer
+  @apply border-b-2 border-[#1814F3] text-sm text-[#1814F3] cursor-pointer;
 }
