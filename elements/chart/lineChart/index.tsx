@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { HTMLProps } from 'react'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,8 +9,8 @@ import {
   Tooltip,
   Filler,
   Legend,
-  ScriptableContext,
-  ChartOptions
+  ChartOptions,
+  ChartData
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 
@@ -38,28 +38,16 @@ export const options = {
   }
 } as ChartOptions<'line'>
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      fill: true,
-      label: 'Balance',
-      data: [65, 59, 50, 81, 56, 55, 40],
-      borderColor: 'rgba(24, 20, 243, 1)',
-      backgroundColor: (context: ScriptableContext<'line'>) => {
-        const ctx = context.chart.ctx
-        const gradient = ctx.createLinearGradient(0, 0, 0, 300)
-        gradient.addColorStop(0, 'rgba(45, 96, 255, 0.25)')
-        gradient.addColorStop(1, 'rgba(45, 96, 255, 0.00)')
-        return gradient
-      },
-      tension: 0.5
-    }
-  ]
+type Props = HTMLProps<HTMLDivElement> & {
+  actionComponent?: React.ReactElement
+  chartData: ChartData<'line', number[], string>
+  options?: ChartOptions<'line'>
+  subtitle?: string
+  title?: string
 }
 
-export default function BaseLineChart() {
-  return <Line options={options} data={data} />
+const BaseLineChart: React.FC<Props> = ({ chartData }) => {
+  return <Line options={options} data={chartData} />
 }
+
+export default BaseLineChart

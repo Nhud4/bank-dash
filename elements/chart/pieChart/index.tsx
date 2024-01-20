@@ -1,26 +1,10 @@
 'use client'
 
-import React from 'react'
+import React, { HTMLProps } from 'react'
 import { ArcElement, Chart as ChartJS, ChartData, ChartOptions, Legend, Tooltip } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
-
-export const data = {
-  labels: ['Entertainment', 'Bill Expense', 'Others', 'Investment'],
-  datasets: [
-    {
-      data: [12, 19, 13, 8],
-      backgroundColor: [
-        'rgba(52, 60, 106, 1)',
-        'rgba(252, 121, 0, 1)',
-        'rgba(24, 20, 243, 1)',
-        'rgba(250, 0, 255, 1)'
-      ],
-      borderWidth: 4
-    }
-  ]
-}
 
 export const options = {
   responsive: true,
@@ -44,6 +28,16 @@ export const options = {
   cutout: '70%'
 } as ChartOptions<'doughnut'>
 
-export default function BasePieChart() {
-  return <Doughnut data={data} options={options} />
+type Props = HTMLProps<HTMLDivElement> & {
+  actionComponent?: React.ReactElement
+  chartData: ChartData<'doughnut', number[], string>
+  options?: ChartOptions<'doughnut'>
+  subtitle?: string
+  title?: string
 }
+
+const BasePieChart: React.FC<Props> = ({ chartData }) => {
+  return <Doughnut data={chartData} options={options} />
+}
+
+export default BasePieChart
