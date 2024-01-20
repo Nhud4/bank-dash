@@ -1,0 +1,27 @@
+.wrapper {
+    @apply bg-white p-4 rounded-2xl h-fit
+}
+.all {
+    @apply flex justify-end mb-2 cursor-pointer
+}
+.all h1 {
+    @apply text-base font-medium text-[#718EBF]
+}
+.wrapperMenu {
+    @apply flex justify-between items-center
+}
+.menu {
+    @apply flex flex-col items-center
+}
+.menu h1 {
+    @apply text-base font-bold text-[#232323]
+}
+.menu h2 {
+    @apply text-sm font-bold text-[#718EBF]
+}
+.menu h3 {
+    @apply text-base font-normal text-[#232323]
+}
+.menu p {
+    @apply text-sm font-normal text-[#718EBF]
+}
