@@ -11,7 +11,6 @@ import Loading from '../loading'
 export default function Page() {
   return (
     <>
-      <Loading />
       <div className='grid grid-cols-4 gap-4'>
         <GeneralCard
           src={UserIcon}
