@@ -6,10 +6,12 @@ import UserIcon from '@/public/assets/icons/user-1.svg'
 import BagIcon from '@/public/assets/icons/briefcase.svg'
 import ChartIcon from '@/public/assets/icons/graph.svg'
 import SupportIcon from '@/public/assets/icons/support.svg'
+import Loading from '../loading'
 
 export default function Page() {
   return (
     <>
+      <Loading />
       <div className='grid grid-cols-4 gap-4'>
         <GeneralCard
           src={UserIcon}
