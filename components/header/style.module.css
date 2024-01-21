@@ -1,5 +1,5 @@
 .wrapper {
-    @apply fixed z-40 flex justify-between items-center w-[81%] bg-white p-3 shadow-sm
+    @apply fixed z-40 flex justify-between items-center bg-white p-3 shadow-sm transition-all duration-500
 }
 .wrapper h1 {
     @apply text-2xl font-semibold text-[#343C6A] capitalize

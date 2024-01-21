@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, FC, HTMLAttributes } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BankLogo from '@/public/assets/images/bank.png'
@@ -20,10 +20,16 @@ import CreditIconActive from '@/public/assets/icons/credit-card-1.svg'
 import LoansIconActive from '@/public/assets/icons/loan-1.svg'
 import ServicesIconActive from '@/public/assets/icons/service-1.svg'
 import SettingIconActive from '@/public/assets/icons/settings-solid-1.svg'
+import MenuIcon from '@/public/assets/icons/menu-open.svg'
 import Image from 'next/image'
 import styles from './style.module.css'
 
-export default function NavigationMenu() {
+type Props = HTMLAttributes<HTMLDivElement> & {
+  onClick: Function
+  expand: boolean
+}
+
+const NavigationMenu: FC<Props> = ({ onClick, expand }) => {
   const pathname = usePathname()
   const [isHovering, setIsHovered] = useState(false)
   const [hoverUrl, setHoverUrl] = useState('')
@@ -71,10 +77,36 @@ export default function NavigationMenu() {
     { label: 'Setting', url: '/setting', activeIcon: SettingIconActive, inactiveIcon: SettingIcon }
   ]
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.wrapperLogo}>
-        <Image src={BankLogo} alt='logo' width={36} height={36} />
-        <h1>BankDash.</h1>
+    <div
+      className={[
+        'transition-all duration-500',
+        expand ? styles.wrapper : styles.wrapperHidden
+      ].join(' ')}
+    >
+      <div className='flex justify-between items-center px-4 h-20'>
+        {expand ? (
+          <div className={styles.wrapperLogo}>
+            <Image src={BankLogo} alt='logo' width={36} height={36} />
+            <h1>BankDash.</h1>
+          </div>
+        ) : null}
+        <div
+          className={[
+            'flex justify-center items-center cursor-pointer',
+            !expand ? 'w-20' : ''
+          ].join(' ')}
+          onClick={onClick}
+        >
+          <Image
+            src={MenuIcon}
+            alt='menu-icon'
+            width={25}
+            height={25}
+            className={['transition-all duration-500', !expand ? 'rotate-180' : 'rotate-0'].join(
+              ' '
+            )}
+          />
+        </div>
       </div>
       {menu.map((item, index) => {
         const hover = hoverMenu(item.url)
@@ -83,7 +115,9 @@ export default function NavigationMenu() {
             <div
               className={[
                 styles.border,
-                pathname === item.url || hover ? 'bg-[#2D60FF]' : 'bg-white'
+                pathname === item.url || hover ? 'bg-[#2D60FF]' : 'bg-white',
+                'transition-all duration-500',
+                !expand ? 'mr-5' : 'mr-9'
               ].join(' ')}
             />
             <Link
@@ -91,16 +125,23 @@ export default function NavigationMenu() {
               onMouseEnter={() => onMouseEnter(item.url)}
               onMouseLeave={onMouseLeave}
             >
-              <div className={styles.menu}>
+              <div className={['transition-all duration-500', styles.menu].join(' ')}>
                 {pathname === item.url || hover ? (
-                  <Image src={item.activeIcon} alt='icon' priority={true} />
+                  <Image src={item.activeIcon} alt='icon' priority={true} width={25} height={25} />
                 ) : (
-                  <Image src={item.inactiveIcon} alt='icon' priority={true} />
+                  <Image
+                    src={item.inactiveIcon}
+                    alt='icon'
+                    priority={true}
+                    width={25}
+                    height={25}
+                  />
                 )}
                 <p
-                  className={
-                    pathname === item.url || hover ? styles.activeMenu : styles.inactiveMenu
-                  }
+                  className={[
+                    pathname === item.url || hover ? styles.activeMenu : styles.inactiveMenu,
+                    !expand ? 'hidden' : ''
+                  ].join(' ')}
                 >
                   {item.label}
                 </p>
@@ -112,3 +153,5 @@ export default function NavigationMenu() {
     </div>
   )
 }
+
+export default NavigationMenu

@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { FC, HTMLAttributes } from 'react'
 import { usePathname } from 'next/navigation'
 import Search from '../input/search'
 import SettingIcon from '@/public/assets/icons/settings.svg'
@@ -9,11 +9,15 @@ import Profile2 from '@/public/assets/images/image01.jpg'
 import Image from 'next/image'
 import styles from './style.module.css'
 
-export default function Header() {
+type Props = HTMLAttributes<HTMLDivElement> & {
+  expand: boolean
+}
+
+const Header: FC<Props> = ({ expand }) => {
   const pathname = usePathname()
   const pageTitle = pathname.split('/')[1]
   return (
-    <div className={styles.wrapper}>
+    <div className={[styles.wrapper, !expand ? 'w-[95%]' : 'w-[81%]'].join(' ')}>
       <h1>{pageTitle ? pageTitle : 'Dashboard'}</h1>
       <div className={styles.wrapperRight}>
         <Search />
@@ -30,3 +34,5 @@ export default function Header() {
     </div>
   )
 }
+
+export default Header
