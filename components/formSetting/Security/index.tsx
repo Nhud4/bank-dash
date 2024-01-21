@@ -4,12 +4,13 @@ import React from 'react'
 import Image from 'next/image'
 import SwitchOn from '@/public/assets/icons/switchOn.svg'
 import PasswordInput from '@/components/input/passwordInput'
+import styles from './style.module.css'
 
 export default function FromSecurity() {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <h1>Two-factor Authentication</h1>
-      <div className='flex justify-start items-center space-x-4'>
+      <div className='flex justify-start items-center space-x-4 my-4'>
         <Image src={SwitchOn} alt='on' />
         <p>Enable or disable two factor authentication</p>
       </div>
@@ -20,7 +21,14 @@ export default function FromSecurity() {
           placeholder='Current Password'
           value='Current Password'
         />
-        <PasswordInput label='New Password' placeholder='New Password' value='New Password' />
+        <div className='col-start-1'>
+          <PasswordInput label='New Password' placeholder='New Password' value='New Password' />
+        </div>
+      </div>
+      <div className='flex justify-end mt-6'>
+        <button className='bg-[#1814F3] w-[130px] h-[40px] rounded-lg text-[15px] font-medium text-white'>
+          Save
+        </button>
       </div>
     </div>
   )
